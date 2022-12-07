@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework", "Homework\Homework.csproj", "{31D85CD0-BD76-4F73-AAD8-E92AE0C444FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework", "Homework\Homework.csproj", "{31D85CD0-BD76-4F73-AAD8-E92AE0C444FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj", "{511B9997-A9C0-4F6E-9F49-5F394C5B28D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Array", "Array\Array.csproj", "{511B9997-A9C0-4F6E-9F49-5F394C5B28D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFor", "TestFor\TestFor.csproj", "{45D08EB1-B5C9-40A6-A2EC-95EE1AFCC4BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{511B9997-A9C0-4F6E-9F49-5F394C5B28D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{511B9997-A9C0-4F6E-9F49-5F394C5B28D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{511B9997-A9C0-4F6E-9F49-5F394C5B28D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45D08EB1-B5C9-40A6-A2EC-95EE1AFCC4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45D08EB1-B5C9-40A6-A2EC-95EE1AFCC4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45D08EB1-B5C9-40A6-A2EC-95EE1AFCC4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45D08EB1-B5C9-40A6-A2EC-95EE1AFCC4BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

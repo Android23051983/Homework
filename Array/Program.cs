@@ -9,6 +9,7 @@
 using System.Buffers;
 using System.Net.WebSockets;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Schema;
@@ -336,6 +337,42 @@ void Coordinates(int maxArray2D_2, int minArray2D_2)
 
 #if TASK_3
 
+//string TextCode = " ";
+void Code_3(string text_3)
+{
+    char[] chars_3 = text_3.ToCharArray();
+    int variant_3 = 0;
+
+    for (int i = 0; i < chars_3.Length; i++)
+    {
+        if (chars_3[i] != ' ')
+        {
+            variant_3 = chars_3[i];
+            variant_3 = variant_3 + 2;
+            chars_3[i] = Convert.ToChar(variant_3);
+        }
+    }
+    string TextCript = new string(chars_3);
+    WriteLine("Зашифрованный текст");
+    WriteLine(TextCript);
+
+    for (int i = 0; i < chars_3.Length; i++)
+    {
+        if (chars_3[i] != ' ')
+        {
+            variant_3 = chars_3[i];
+            variant_3 = variant_3 - 2;
+            chars_3[i] = Convert.ToChar(variant_3);
+        }
+    }
+    string TextEncript = new string(chars_3);
+    WriteLine("Расшифрованный текст");
+    WriteLine(TextEncript);
+}
+
+
+
+
 #endif
 
 #if TASK_4
@@ -524,7 +561,7 @@ void BadWords()
 } 
 #endif
 
-string[] menuItem = new string[] { "Программа - 1 \"Работа с Одномерным и Двумерным массивами\"", "Программа - 2 \"Сумма элементов в промежутке Min-Max\"", "Программа - 3 \"Шифр Цезаря\"", "Программа - 4 \"Операции умножения на матрицы число, сложение матриц, произведение матриц\"", "Программа - 5 \"Арифметическое выражение\"", "Программа - 6 \"Большая буква после точки\"", "Программа - 7 \"Запикивание плохих слов\"", "Программа - 8 \"Выход из программы\"" };
+string[] menuItem = new string[] { "Программа - 1 \"Работа с Одномерным и Двумерным массивами\"", "Программа - 2 \"Сумма элементов в промежутке Min-Max\"", "Программа - 3 \"Шифр Цезаря\"", "Программа - 4 \"Операции умножения на матрицы число, сложение матриц, произведение матриц\"", "Программа - 5 \"Арифметическое выражение\"", "Программа - 6 \"Большая буква в начале строки\"", "Программа - 7 \"Запикивание плохих слов\"", "Программа - 8 \"Выход из программы\"" };
 
 foreach (string menu in menuItem)
 {
@@ -558,7 +595,9 @@ switch (str)
         Coordinates(maxArray2D_2, minArray2D_2);      
         break;
      case "3":
-        WriteLine("3");
+        WriteLine("Ввведите строку");
+        string text_3 = ReadLine();
+        Code_3(text_3);
         break;
      case "4":
         Clear();

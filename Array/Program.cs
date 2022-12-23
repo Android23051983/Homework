@@ -471,43 +471,76 @@ int[,] SumArr2D_4(int[,] arr, int[,] arr2 )
 void MathPlusMinus()
 {
     WriteLine("Введите арифметическое выражение");
-    string text_5 = ReadLine();
-    WriteLine();
-    //WriteLine(text);
-    double a = 0;
-    double b = 0;
-    int buffer = 0;
-    double total = 0;
-    string str = "";
-    char[] chars_5 = text_5.ToCharArray();
-    text_5 = text_5.Replace(".", ",");
-    string[] variables = text_5.Split('+', '-', '/', '*');
-    foreach(var result in variables)
+
+    static int negate(int a)
     {
-        WriteLine(result);
+        int neg = 0;
+        int d = a < 0 ? 1 : -1;
+        while (a != 0)
+        {
+            neg += d;
+            a += d;
+        }
+        return neg;
     }
-    //WriteLine(text_5);
 
-    //for (int i=0 ; i <= chars_5.Length-1; i++) 
-    //{
+    static int subtract(int a, int b)
+    {
+        return a + negate(b);
+    }
 
-    //    switch (chars_5[i])
-    //    {
-    //        case '*':
-    //            buffer = i - 1;
-    //            str = Convert.ToString(chars_5[buffer]);
-    //            a = Convert.ToDouble(str);
-    //            buffer = i + 1;
-    //            str = Convert.ToString(chars_5[buffer]);
-    //            b = Convert.ToDouble(str);
-    //            for (i = 0; i < b; i++)
-    //                WriteLine($"{a}*{b} = {total}");
-    //            break;
-    //        case '/':
-    //            break;
+    static int multiply(int a, int b)
+    {
+        if (a < b)
+        {
+            return multiply(b, a); // алгоритм будет быстрее, если b < a
+        }
+        int sum = 0;
+        for (int i = abs(b); i > 0; i--)
+        {
+            sum += a;
+        }
+        if (b < 0)
+        {
+            sum = negate(sum);
+        }
+        return sum;
+    }
 
-    //    }
-    //}
+    static int abs(int a)
+    {
+        if (a < 0)
+        {
+            return negate(a);
+        }
+        else
+        {
+            return a;
+        }
+    }
+
+    int divide(int a, int b)
+    {
+        int absa = abs(a);
+        int absb = abs(b);
+
+        int product = 0;
+        int x = 0;
+        while (product + absb <= absa)
+        {
+            product += absb;
+            x++;
+        }
+
+        if ((a < 0 && b < 0) || (a > 0 && b > 0))
+        {
+            return x;
+        }
+        else
+        {
+            return negate(x);
+        }
+    }
 }
 
 #endif
@@ -561,7 +594,7 @@ void BadWords()
 } 
 #endif
 
-string[] menuItem = new string[] { "Программа - 1 \"Работа с Одномерным и Двумерным массивами\"", "Программа - 2 \"Сумма элементов в промежутке Min-Max\"", "Программа - 3 \"Шифр Цезаря\"", "Программа - 4 \"Операции умножения на матрицы число, сложение матриц, произведение матриц\"", "Программа - 5 \"Арифметическое выражение\"(НЕ ЗНАЮ КАК ДЕЛ)", "Программа - 6 \"Большая буква в начале строки\"", "Программа - 7 \"Запикивание плохих слов\"", "Программа - 8 \"Выход из программы\"" };
+string[] menuItem = new string[] { "Программа - 1 \"Работа с Одномерным и Двумерным массивами\"", "Программа - 2 \"Сумма элементов в промежутке Min-Max\"", "Программа - 3 \"Шифр Цезаря\"", "Программа - 4 \"Операции умножения на матрицы число, сложение матриц, произведение матриц\"", "Программа - 5 \"Арифметическое выражение\"(НЕ ДОДЕЛАЛ)", "Программа - 6 \"Большая буква в начале строки\"", "Программа - 7 \"Запикивание плохих слов\"", "Программа - 8 \"Выход из программы\"" };
 
 foreach (string menu in menuItem)
 {

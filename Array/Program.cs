@@ -654,8 +654,10 @@ internal class Program
 #endif
 
 #if TASK_7
-        void BadWords()
+    
+    void BadWords()
         {
+
             WriteLine("Введите предложение (Enter без предложения для окончания): ");
             string text_7, sentences = "";
             while(true)
@@ -670,7 +672,7 @@ internal class Program
             WriteLine(sentences);
             //string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
             string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
-            
+            //string CorrectString = "";
             WriteLine($"\nОтредактированная строка текста");
             WriteLine();
             WriteLine(CorrectString);

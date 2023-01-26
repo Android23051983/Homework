@@ -641,7 +641,7 @@ internal class Program
                 }
                 if (chars[i] == '.' || chars[i] == '?' || chars[i] == '!')
                 {
-                    k = i + 2;
+                    k = i + 2; 
                     if (k < chars.Length - 1) { chars[k] = char.ToUpper(chars[k]); }
 
                 }
@@ -656,13 +656,22 @@ internal class Program
 #if TASK_7
         void BadWords()
         {
-            string text_7 = "To be, or not to be, that is the question,\r\nWhether 'tis nobler in the mind to suffer\r\nThe slings and arrows of outrageous fortune,\r\nOr to take arms against a sea of troubles,\r\nAnd by opposing end them? To die: to sleep;\r\nNo more; and by a sleep to say we end\r\nThe heart-ache and the thousand natural shocks\r\nThat flesh is heir to, 'tis a consummation\r\nDevoutly to be wish'd. To die, to sleep";
-            WriteLine(text_7);
-            WriteLine();
+            //string text_7 = "To be, or not to be, that is the question,\r\nWhether 'tis nobler in the mind to suffer\r\nThe slings and arrows of outrageous fortune,\r\nOr to take arms against a sea of troubles,\r\nAnd by opposing end them? To die: to sleep;\r\nNo more; and by a sleep to say we end\r\nThe heart-ache and the thousand natural shocks\r\nThat flesh is heir to, 'tis a consummation\r\nDevoutly to be wish'd. To die, to sleep";
+            //WriteLine(text_7);
+            WriteLine("Введите предложение (Enter без предложения для окончания): ");
+            string text_7, sentences = "";
+            while(true)
+            {
+                text_7 = ReadLine();
+                if (text_7 == "") break;
+                sentences += " " + text_7;
+            }
+            WriteLine(sentences);
+            //string text_7 = ReadLine() + "\n";
             //string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
-            string CorrectString = text_7.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
-
-            WriteLine("Отредактированная строка текста");
+            string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
+            
+            WriteLine($"\nОтредактированная строка текста");
             WriteLine();
             WriteLine(CorrectString);
             char temp = '*';

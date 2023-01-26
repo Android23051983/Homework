@@ -664,7 +664,9 @@ internal class Program
             {
                 text_7 = ReadLine();
                 if (text_7 == "") break;
-                sentences += " " + text_7;
+
+                sentences += text_7 + " " + $"\r\n";
+                
             }
             WriteLine(sentences);
             //string text_7 = ReadLine() + "\n";

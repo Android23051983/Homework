@@ -671,16 +671,23 @@ internal class Program
             }
             Clear();
             WriteLine(sentences);
-            string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
+            string[] s = {"Сука", "сука", "СУКА", "Сука.", "сука.", "СУКА.", "die", "Die", "DIE", "die.", "Die.", "DIE." };
             //string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
             string CorrectString = "";
+            string TempStr = "";
 
-            for (int i = 0; i < s.Length; i++)
+            for (int i = 0; i < s.Length-1; i++)
             {
                 if (sentences.IndexOf(s[i]) > -1)
                 {
                     CorrectString += sentences.Replace(s[i], "***");
+                    if(i<=s.Length-4)
+                    {
+                        TempStr+=CorrectString.Replace(s[i+3], "***");
+
+                    }
                     TestWorld = s[i];
+                    break;
                 }
             }
             

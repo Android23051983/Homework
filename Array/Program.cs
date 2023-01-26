@@ -656,8 +656,6 @@ internal class Program
 #if TASK_7
         void BadWords()
         {
-            //string text_7 = "To be, or not to be, that is the question,\r\nWhether 'tis nobler in the mind to suffer\r\nThe slings and arrows of outrageous fortune,\r\nOr to take arms against a sea of troubles,\r\nAnd by opposing end them? To die: to sleep;\r\nNo more; and by a sleep to say we end\r\nThe heart-ache and the thousand natural shocks\r\nThat flesh is heir to, 'tis a consummation\r\nDevoutly to be wish'd. To die, to sleep";
-            //WriteLine(text_7);
             WriteLine("Введите предложение (Enter без предложения для окончания): ");
             string text_7, sentences = "";
             while(true)
@@ -668,8 +666,8 @@ internal class Program
                 sentences += text_7 + " " + $"\r\n";
                 
             }
+            Clear();
             WriteLine(sentences);
-            //string text_7 = ReadLine() + "\n";
             //string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
             string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
             

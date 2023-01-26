@@ -681,11 +681,6 @@ internal class Program
                 if (sentences.IndexOf(s[i]) > -1)
                 {
                     CorrectString += sentences.Replace(s[i], "***");
-                    if(i<=s.Length-4)
-                    {
-                        TempStr+=CorrectString.Replace(s[i+3], "***");
-
-                    }
                     TestWorld = s[i];
                     break;
                 }

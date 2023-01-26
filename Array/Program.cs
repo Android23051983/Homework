@@ -659,7 +659,8 @@ internal class Program
         {
 
             WriteLine("Введите предложение (Enter без предложения для окончания): ");
-            string text_7, sentences = "";
+            string text_7, TestWorld = "", sentences = "";
+            
             while(true)
             {
                 text_7 = ReadLine();
@@ -670,16 +671,24 @@ internal class Program
             }
             Clear();
             WriteLine(sentences);
-            //string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
-            string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
-            //string CorrectString = "";
+            string[] s = {"Сука", "сука", "СУКА", "die", "Die", "DIE" };
+            //string CorrectString = sentences.Replace("сука", "***").Replace("Сука", "***").Replace("die", "***").Replace("Die", "***");
+            string CorrectString = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (sentences.IndexOf(s[i]) > -1)
+                {
+                    CorrectString += sentences.Replace(s[i], "***");
+                    TestWorld = s[i];
+                }
+            }
             WriteLine($"\nОтредактированная строка текста");
             WriteLine();
             WriteLine(CorrectString);
             char temp = '*';
             var amount = CorrectString.Count(x => x == temp);
             WriteLine();
-            WriteLine("Статистика: " + amount / 3 + " запикано");
+            WriteLine($"Статистика: { amount / 3} запикано слово {TestWorld}");
         }
 #endif
 
